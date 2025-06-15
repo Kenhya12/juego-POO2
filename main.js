@@ -48,7 +48,7 @@ class Game {
       this.murcielago.forEach((murcielago, index) => {
         if (this.hada.colisionaCon(murcielago) && !murcielago.transformado) {
           console.log("Colisión detectada con murciélago", index);
-          const color = murcielago.transformar();
+          const color = murcielago.transformar(); // Transformación del murciélago
           this.actualizarPuntuacion(color.puntos);
         }
       });
@@ -136,8 +136,8 @@ class Hada {
 
 class Murcielago {
   constructor() {
-    this.x = Math.random() * 800 + 100; /* 500 */
-    this.y = Math.random() * 180 + 100; /* 500 */
+    this.x = Math.random() * 800 + 100; // Posición inicial vertical
+    this.y = Math.random() * 180 + 100; // Posición inicial altura
     this.width = 120;
     this.height = 120;
     this.transformado = false;
@@ -165,7 +165,7 @@ class Murcielago {
   volar() {
     const intervalo = 50 + Math.random() * 20; // Intervalo entre 50-70ms
     this.intervalo = setInterval(() => {
-      this.tiempo += this.velocidadTiempo; // Incremento variable
+      this.tiempo += this.velocidadTiempo; // Incremento variable = 0,1 * (0.9 + math.random ()* 0.7)
       const desplazamientoX = 10 * Math.sin(this.tiempo); // Oscilación horizontal
       const desplazamientoY = 5 * Math.cos(this.tiempo); // Oscilación vertical
       // Limita el movimiento dentro del 40% superior y el ancho
