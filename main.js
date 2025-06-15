@@ -9,6 +9,7 @@ class Game {
 
     this.crearEscenario();
     this.agregarEventos();
+    this.gameStarted = false;
   }
 
   crearEscenario() {
