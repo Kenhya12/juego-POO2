@@ -1,3 +1,8 @@
+document.addEventListener("DOMContentLoaded", () => {
+  const juego = new Game();
+});
+
+// Inicio de la clase Game: Controla el juego completo
 class Game {
   constructor() {
     this.container = document.getElementById("game-container");
@@ -6,10 +11,49 @@ class Game {
     this.murcielago = [];
     this.puntuacion = 0;
     this.murcielagosTransformados = 0; // Contador de murciélagos transformados
+    this.gameStarted = false;
 
+    // Mostrar pantalla de inicio
+    const startScreen = document.getElementById("start-screen");
+    if (startScreen) {
+      startScreen.addEventListener("click", () => {
+        console.log("Clic detectado en start-screen");
+        this.iniciarJuego();
+      });
+    } else {
+      console.error("No se encontró el elemento start-screen");
+    }
+  }
+
+  iniciarJuego() {
+    // Ocultar pantalla de inicio
+    const startScreen = document.getElementById("start-screen");
+    if (startScreen) startScreen.style.display = "none";
+    else console.error("start-screen no encontrado al intentar ocultarlo");
+
+    // Mostrar elementos del juego
+    const gameTitle = document.getElementById("game-title");
+    if (gameTitle) gameTitle.style.display = "block";
+    else console.error("game-title no encontrado");
+
+    const puntos = document.getElementById("puntos");
+    if (puntos) puntos.style.display = "block";
+    else console.error("puntos no encontrado");
+
+    const reloadBtn = document.getElementById("reload"); // Añade esto
+    if (reloadBtn) reloadBtn.style.display = "block";   // Añade esto
+    else console.error("reload no encontrado");         // Añade esto
+
+    const gameContainer = document.getElementById("game-container");
+    if (gameContainer) gameContainer.style.display = "block";
+    else console.error("game-container no encontrado");
+    
+    // Crear el escenario y eventos después del clic
     this.crearEscenario();
     this.agregarEventos();
-    this.gameStarted = false;
+    
+    // Activar el juego
+    this.gameStarted = true;
   }
 
   crearEscenario() {
@@ -62,10 +106,11 @@ class Game {
   }
 }
 
+// Inicio de la clase Hada: Controla el personaje principal
 class Hada {
   constructor() {
     this.x = 50;
-    this.y = 375; 
+    this.y = 375;
     this.width = 200;
     this.height = 200;
     this.velocidad = 10;
@@ -78,7 +123,7 @@ class Hada {
     this.element.style.position = "absolute";
     this.element.classList.add("hada");
 
-    this.actualizarPosicion(); 
+    this.actualizarPosicion();
   }
 
   mover(evento) {
@@ -135,6 +180,7 @@ class Hada {
   }
 }
 
+// Inicio de la clase Murcielago: Controla los enemigos que se transforman
 class Murcielago {
   constructor() {
     this.x = Math.random() * 800 + 100; // Posición inicial vertical

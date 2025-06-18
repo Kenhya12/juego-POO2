@@ -9,32 +9,59 @@ body {
     flex-direction: column;
 }
 
+/* Inicio de las fuentes personalizadas */
 .italianno-regular {
     font-family: "Italianno", cursive;
     font-weight: 400;
     font-style: normal;
 }
 
-h1 {
+/* Inicio de los estilos de títulos */
+.game-title {
     font-family: "Italianno";
+    text-align: center;
     font-size: 70px;
     color: rgb(90, 95, 88);
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2)
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
+#start-screen .game-title {
+    font-size: 5em;
+    margin-bottom: 20px;
+    text-align: center;
+}
 
-p {
+/* Inicio de los estilos de párrafos */
+.story-text {
     font-family: "Edu VIC WA NT Hand Precursive";
-    color: rgb(210, 186, 247);
+    color: rgb(90, 95, 88);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
     font-style: italic;
     font-weight: 600;
     text-align: center;
     line-height: 1.6;
-    font-size: 40px;
+    font-size: 30px;
     margin-left: 300px;
     margin-right: 300px;
+    margin-bottom: 100px;
 }
 
+.start-text {
+    font-size: 1.2em;
+    color: rgb(132, 54, 120);
+    text-shadow: 0 0 10px rgba(84, 84, 84, 0.7);
+    font-weight: 600;
+    text-align: center;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.6; }
+    50% { opacity: 1; }
+    100% { opacity: 0.6; }
+}
+
+/* Inicio de los estilos de botones */
 button {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 700;
@@ -53,9 +80,28 @@ button:hover {
     box-shadow: 3px 5px 15px rgba(1, 1, 1, 0.6);
 }
 
+#reload {
+    margin-top: 20px; /* Espacio entre el juego y el botón */
+    padding: 12px 25px;
+    font-size: 18px;
+    background-color: rgb(132, 54, 120);
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    box-shadow: 3px 5px 15px rgba(1, 1, 1, 0.6);
+    transition: all 0.3s ease;
+}
+
+#reload:hover {
+    background-color: rgb(11, 43, 78);
+    transform: translateY(-2px);
+}
+
+/* Inicio de los estilos de puntuación */
 #puntos {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color:rgb(90, 95, 88);
+    color: rgb(90, 95, 88);
     font-size: 24px;
     font-weight: 900;
     text-align: center;
@@ -63,6 +109,7 @@ button:hover {
     z-index: 1;
 }
 
+/* Inicio de los estilos de contenedores */
 #game-container {
     position: relative;
     width: 1000px;
@@ -94,8 +141,9 @@ button:hover {
     height: 100%;
     object-fit: cover;
     z-index: 2;
-}
+} 
 
+/* Inicio de los estilos de personajes */
 .hada {
     position: absolute;
     width: 200px;
@@ -109,6 +157,7 @@ button:hover {
     object-fit: contain;
 }
 
+/* Inicio de los estilos de fondo */
 #fondo {
     position: fixed;
     top: 0;

@@ -5,19 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nimia y el Hechizo de las Mariposas</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Hand+Precursive&display=swap" rel="stylesheet">
+    <script src="main.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Hand+Precursive&family=Italianno&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <img src="imagenes/fondo5.png" alt="Fondo del body" id="fondo">
-        <div ></div>
-    <h1 class="italianno-regular">Nimia y el Hechizo de las Mariposas</h1>
-    <div id="game-container">
+    <div id="start-screen">
+        <h1 class="game-title">Nimia y el Hechizo de las Mariposas</h1>
+        <p class="story-text">"En un bosque donde la luz canta entre las hojas, 
+            un hada llamada Nimia descubre que sus amigas mariposas han sido convertidas 
+            en murciélagos por un hechizo olvidado. Con polvo de estrellas y magia del corazón, 
+            deberá guiarlas de vuelta a sus alas."</p>
+        <p class="start-text">Haz clic en cualquier lugar de la pantalla para comenzar</p>
+    </div>
+
+    <!--Elementos del juego -->
+    <h1 id="game-title" class="game-title" style="display: none;">Nimia y el Hechizo de las Mariposas</h1>
+    <div id="game-container" style="display: none;">
+        
         <img id="escenario" src="imagenes/escenario.png" alt="Escenario del juego">
         <img id="escenario2" src="imagenes/escenario2.png" alt="Detalles del escenario">
-    </div>
-    <div id="puntos">PUNTOS: 0</div>
-    <button id="reload">Reiniciar Juego</button>
-    <script src="main.js"></script>
-</body>
-</html>
+    </div>  
+    <div id="puntos" style="display: none;">PUNTOS: 0</div>
+    <button id="reload" style="display: none;">Reiniciar Juego</button>
+</body> 
