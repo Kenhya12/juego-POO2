@@ -117,7 +117,7 @@ class Hada {
     this.saltando = false;
 
     this.element = document.createElement("img");
-    this.element.src = "imagenes/hada.png";
+    this.element.src = "imagenes/Hada.png";
     this.element.style.width = `${this.width}px`;
     this.element.style.height = `${this.height}px`;
     this.element.style.position = "absolute";
@@ -225,10 +225,10 @@ class Murcielago {
 
   seleccionarColor() {
     const colores = [
-      { nombre: "roja", src: "imagenes/mariposa-roja.png", puntos: 5 },
-      { nombre: "amarilla", src: "imagenes/mariposa-amarilla.png", puntos: 10 },
-      { nombre: "azul", src: "imagenes/mariposa-azul.png", puntos: 15 },
-      { nombre: "rosa", src: "imagenes/mariposa-rosa.png", puntos: 20 }
+      { nombre: "roja", src: "imagenes/Mariposa-roja.png", puntos: 5 },
+      { nombre: "amarilla", src: "imagenes/Mariposa-amarilla.png", puntos: 10 },
+      { nombre: "azul", src: "imagenes/Mariposa-azul.png", puntos: 15 },
+      { nombre: "rosa", src: "imagenes/Mariposa-rosa.png", puntos: 20 }
     ];
     return colores[Math.floor(Math.random() * colores.length)];
   }
